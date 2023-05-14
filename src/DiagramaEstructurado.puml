@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+:Empleado: -- (Alta Cliente)
+:Empleado: -- (Introducir Pedido)
+:Empleado: -- (Obtener Estado Pedido)
+:Empleado: -- (Buscar Pedido)
+:Empleado: -- (Cancelar Pedido)
+(Introducir Pedido) <. (Alta Cliente) : extiende
+(Introducir Pedido) <... (Pago con Tarjeta) : extiende
+(Introducir Pedido) <... (Pago en Cuenta) : extiende
+(Introducir Pedido) ..> (Buscar Cliente) : incluye
+(Obtener Estado Pedido) ..> (Buscar Pedido) : incluye
+(Cancelar Pedido) ..> (Buscar Pedido) : incluye
+@enduml
